@@ -6,27 +6,31 @@ import Form from "../Form";
 import Error from "../Error";
 import Loader from "../Loader";
 import Forecast from "../Forecast";
+import Chart from "../Chart";
 
 const Page = () => {
-  const { isError, isLoading, forecast, submitResource } = useForecast();
+  const { isError, isLoading, forecast, submitResource, data } = useForecast();
 
   function onSubmit(value) {
     submitResource(value);
   }
 
   return (
-    <Fragment>
-      <Header />
-      {!forecast && (
-        <div className={classes.box}>
-          {!isLoading && <Form submitSearch={onSubmit} />}
+    <div>
+      <Fragment>
+        <Header />
+        {!forecast && (
+          <div className={classes.box}>
+            {!isLoading && <Form submitSearch={onSubmit} />}
 
-          {isError && <Error message={isError} />}
-          {isLoading && <Loader />}
-        </div>
-      )}
-      {forecast && <Forecast forecast={forecast} />}
-    </Fragment>
+            {isError && <Error message={isError} />}
+            {isLoading && <Loader />}
+          </div>
+        )}
+        {forecast && <Forecast forecast={forecast} />}
+      </Fragment>
+      <Chart data={data} />
+    </div>
   );
 };
 

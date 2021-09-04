@@ -15,7 +15,7 @@ const Form = ({ submitSearch }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Container fluid className=" d-flex justify-content-center ">
+      <Container fluid className=" d-flex justify-content-center">
         <Row>
           <Col>
             <MDBInput
@@ -25,7 +25,7 @@ const Form = ({ submitSearch }) => {
               required
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              label="Material input"
+              label="location"
             />
 
             <button

@@ -12,6 +12,7 @@ const UseForecast = () => {
   const [isError, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [forecast, setforecast] = useState(null);
+  const [data, setData] = useState(null);
 
   //get the WeoID
   const getWoeId = async (location) => {
@@ -63,9 +64,10 @@ const UseForecast = () => {
     const data = await getForecastData(response.woeid);
     if (!data) return;
     getAllForecastData(data);
+    setData({ data });
   };
 
-  return { isError, isLoading, forecast, submitResource };
+  return { isError, isLoading, forecast, submitResource, data };
 };
 
 export default UseForecast;

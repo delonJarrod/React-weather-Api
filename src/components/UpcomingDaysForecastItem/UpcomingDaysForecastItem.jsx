@@ -8,8 +8,6 @@ const UpcomingDaysForecastItem = ({ weekday, temperature, imgUrl }) => (
     className={`${styles.weekday} d-flex flex-column justify-content-center align-items-center p-2`}
   >
     <img
-      src=""
-      alt=""
       className="mb-2"
       width="30"
       src={`${imgUrlBase}img/weather/${imgUrl}.svg`}
