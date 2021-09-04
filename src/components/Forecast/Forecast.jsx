@@ -9,6 +9,7 @@ import UpcomingDaysForecast from "../UpcomingDaysForecast";
 
 const Forecast = ({ forecast }) => (
   <Container className={styles.box}>
+    {console.log("Forecast Data: ", forecast)}
     <Row>
       <Col className="d-flex flex-column justify-content-between">
         <CurrentDayDescription forecast={forecast.currentDayDetails} />

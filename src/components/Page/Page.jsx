@@ -16,7 +16,7 @@ const Page = () => {
   }
 
   return (
-    <div>
+    <div className="pb-5">
       <Fragment>
         <Header />
         {!forecast && (
